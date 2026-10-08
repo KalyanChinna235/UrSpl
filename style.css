@@ -1,0 +1,384 @@
+```css
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #ffdde1, #ee9ca7);
+    color: #4a1c2b;
+    overflow-x: hidden;
+}
+
+
+/* Main container */
+
+.container {
+    width: 100%;
+    max-width: 1000px;
+    margin: auto;
+    padding: 20px;
+}
+
+
+/* Hero Section */
+
+.hero {
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    padding: 40px 20px;
+}
+
+.cake {
+    font-size: 90px;
+
+    animation: bounce 2s infinite;
+}
+
+.small-text {
+    margin-top: 20px;
+
+    font-size: 18px;
+    opacity: 0.8;
+}
+
+h1 {
+    font-family: 'Dancing Script', cursive;
+
+    font-size: 70px;
+
+    margin: 10px 0;
+}
+
+.hero h1 span {
+    display: block;
+
+    color: #d6336c;
+}
+
+.intro {
+    max-width: 650px;
+
+    font-size: 18px;
+    line-height: 1.8;
+
+    margin: 20px auto;
+}
+
+
+/* Button */
+
+button {
+    border: none;
+
+    padding: 15px 30px;
+
+    border-radius: 50px;
+
+    background: #d6336c;
+    color: white;
+
+    font-size: 17px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    box-shadow: 0 8px 20px rgba(214, 51, 108, 0.3);
+
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: scale(1.08);
+    background: #b52b59;
+}
+
+
+/* Sections */
+
+section {
+    margin-bottom: 100px;
+}
+
+h2 {
+    text-align: center;
+
+    font-family: 'Dancing Script', cursive;
+
+    font-size: 48px;
+
+    margin-bottom: 30px;
+
+    color: #b52b59;
+}
+
+
+/* Message Card */
+
+.message-card {
+    background: rgba(255, 255, 255, 0.75);
+
+    padding: 40px;
+
+    border-radius: 25px;
+
+    text-align: center;
+
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+
+    backdrop-filter: blur(10px);
+}
+
+.message-card p {
+    font-size: 17px;
+
+    line-height: 1.9;
+
+    margin-bottom: 20px;
+}
+
+.message-card h3 {
+    font-family: 'Dancing Script', cursive;
+
+    font-size: 32px;
+
+    color: #d6336c;
+
+    margin-top: 30px;
+}
+
+
+/* Gallery */
+
+.gallery {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 20px;
+}
+
+.photo-card {
+    height: 350px;
+
+    overflow: hidden;
+
+    border-radius: 20px;
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+
+    background: white;
+
+    transition: 0.4s;
+}
+
+.photo-card:hover {
+    transform: translateY(-10px) rotate(1deg);
+}
+
+.photo-card img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition: 0.5s;
+}
+
+.photo-card:hover img {
+    transform: scale(1.1);
+}
+
+
+/* Final Section */
+
+.final-section {
+    text-align: center;
+
+    padding: 60px 20px;
+
+    background: rgba(255, 255, 255, 0.35);
+
+    border-radius: 30px;
+}
+
+.gift {
+    font-size: 80px;
+
+    animation: bounce 2s infinite;
+}
+
+.final-section p {
+    max-width: 650px;
+
+    margin: 15px auto;
+
+    line-height: 1.8;
+
+    font-size: 17px;
+}
+
+.final-section h1 {
+    color: #d6336c;
+
+    margin-top: 30px;
+}
+
+.hearts {
+    font-size: 30px;
+
+    margin-top: 20px;
+}
+
+
+/* Balloons */
+
+.balloon {
+    position: fixed;
+
+    font-size: 60px;
+
+    z-index: -1;
+
+    animation: float 5s ease-in-out infinite;
+}
+
+.balloon1 {
+    left: 5%;
+    top: 20%;
+}
+
+.balloon2 {
+    right: 5%;
+    top: 30%;
+
+    animation-delay: 1s;
+}
+
+.balloon3 {
+    left: 10%;
+    bottom: 10%;
+
+    animation-delay: 2s;
+}
+
+.balloon4 {
+    right: 10%;
+    bottom: 15%;
+
+    animation-delay: 3s;
+}
+
+
+/* Confetti */
+
+.confetti {
+    position: fixed;
+
+    top: -20px;
+
+    width: 10px;
+    height: 10px;
+
+    z-index: 9999;
+
+    animation: fall linear forwards;
+}
+
+
+/* Footer */
+
+footer {
+    text-align: center;
+
+    padding: 30px;
+
+    font-size: 14px;
+
+    opacity: 0.7;
+}
+
+
+/* Animations */
+
+@keyframes bounce {
+
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+
+@keyframes float {
+
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-30px);
+    }
+}
+
+
+@keyframes fall {
+
+    to {
+        transform: translateY(110vh) rotate(720deg);
+        opacity: 0;
+    }
+
+}
+
+
+/* Mobile */
+
+@media (max-width: 700px) {
+
+    h1 {
+        font-size: 48px;
+    }
+
+    h2 {
+        font-size: 38px;
+    }
+
+    .intro {
+        font-size: 16px;
+    }
+
+    .gallery {
+        grid-template-columns: 1fr;
+    }
+
+    .photo-card {
+        height: 400px;
+    }
+
+    .message-card {
+        padding: 25px;
+    }
+
+    .balloon {
+        font-size: 40px;
+    }
+
+}
+```
