@@ -230,46 +230,66 @@ wishButton.addEventListener("click", () => {
 });
 
 
-    // Music player.
-    playButton.addEventListener("click", async () => {
-        if (!musicAvailable) {
-            musicNote.textContent =
-                "Check that images/birthday-song.mp3 exists, then reload. ♡";
-            return;
-        }
+// Music player.
+let songHasPlayed = false;
 
-        if (birthdayMusic.paused) {
-            try {
-                await birthdayMusic.play();
-
-                playButton.textContent = "Ⅱ";
-                playButton.setAttribute("aria-label", "Pause music");
-                record.classList.add("playing");
-                musicNote.textContent = "Enjoy your little soundtrack. ♡";
-            } catch (error) {
-                console.error("Music playback failed:", error);
-                musicNote.textContent =
-                    "Music could not start. Check your song file.";
-            }
-        } else {
-            birthdayMusic.pause();
-            playButton.textContent = "▶";
-            playButton.setAttribute("aria-label", "Play music");
-            record.classList.remove("playing");
-        }
-    });
-
-    birthdayMusic.addEventListener("error", () => {
-        musicAvailable = false;
+playButton.addEventListener("click", async () => {
+    if (!musicAvailable) {
         musicNote.textContent =
-            "Check that your music file exists at images/birthday-song.mp3. ♡";
-    });
+            "Check that images/birthday-song.mp3 exists, then reload. ♡";
+        return;
+    }
 
-    birthdayMusic.addEventListener("ended", () => {
+    if (birthdayMusic.paused) {
+        try {
+            await birthdayMusic.play();
+
+            // Allow navigation only after the song starts successfully.
+            songHasPlayed = true;
+
+            playButton.textContent = "Ⅱ";
+            playButton.setAttribute("aria-label", "Pause music");
+            record.classList.add("playing");
+            musicNote.textContent = "Enjoy your little soundtrack. ♡";
+        } catch (error) {
+            console.error("Music playback failed:", error);
+            musicNote.textContent =
+                "Music could not start. Check your song file.";
+        }
+    } else {
+        birthdayMusic.pause();
         playButton.textContent = "▶";
         playButton.setAttribute("aria-label", "Play music");
         record.classList.remove("playing");
-    });
+    }
+});
+
+birthdayMusic.addEventListener("error", () => {
+    musicAvailable = false;
+    musicNote.textContent =
+        "Check that your music file exists at images/birthday-song.mp3. ♡";
+});
+
+birthdayMusic.addEventListener("ended", () => {
+    playButton.textContent = "▶";
+    playButton.setAttribute("aria-label", "Play music");
+    record.classList.remove("playing");
+});
+
+
+// Prevent moving to the secret screen until the song has started.
+document.querySelectorAll('#music [data-next="secret"]').forEach((button) => {
+    button.addEventListener("click", (event) => {
+        if (!songHasPlayed) {
+            event.preventDefault();
+            event.stopImmediatePropagation();
+
+            musicNote.textContent =
+                "First, play your birthday song! 🎶❤️";
+        }
+    }, true);
+});
+
 
     // Reveal the secret message.
     revealButton.addEventListener("click", () => {
