@@ -1,155 +1,217 @@
-Kalyan_Mickyy
+KalyanMickyy
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Happy Birthday ❤️</title>
+    <meta name="theme-color" content="#090b1c">
+    <title>For Sai Shruthi ❤️</title>
 
     <link rel="stylesheet" href="style.css">
-
-    <!-- Google Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap"
-          rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
-
 <body>
 
-<!-- Background balloons -->
-<div class="balloon balloon1">🎈</div>
-<div class="balloon balloon2">🎈</div>
-<div class="balloon balloon3">🎈</div>
-<div class="balloon balloon4">🎈</div>
+    <div class="stars" aria-hidden="true"></div>
+    <div class="hearts-layer" id="heartsLayer" aria-hidden="true"></div>
 
-<!-- Main container -->
-<div class="container">
+    <main>
+        <!-- 1. OPENING SCREEN -->
+        <section class="screen active" id="opening">
+            <div class="moon">☾</div>
+            <div class="intro-content">
+                <p class="eyebrow">A LITTLE SOMETHING JUST FOR YOU</p>
+                <h1 class="script-title">Hey, Sai Shruthi<span>...</span></h1>
+                <p class="opening-copy">
+                    Some people make the world a little more beautiful
+                    just by being in it. Today, this little surprise is for you.
+                </p>
+                <div class="tiny-heart">♡</div>
+                <button class="glow-button" id="startButton">
+                    Open your surprise <span>♡</span>
+                </button>
+                <p class="hint">Made with a little extra care ✨</p>
+            </div>
+        </section>
 
-    <!-- Opening -->
-    <section class="hero">
+        <!-- 2. PERSONAL LETTER -->
+        <section class="screen" id="letter">
+            <div class="section-content">
+                <p class="eyebrow">A FEW WORDS FROM THE HEART</p>
+                <h2 class="script-title">Dear Sai Shruthi,</h2>
 
-        <div class="cake">🎂</div>
+                <article class="letter-card">
+                    <p id="typedLetter" aria-live="polite"></p>
+                    <span class="letter-heart">♡</span>
+                </article>
 
-        <p class="small-text">Today is a very special day...</p>
+                <button class="glow-button next-button" data-next="memories">
+                      A few memories... <span>→</span>
+                </button>
+            </div>
+        </section>
+        
+<!-- PHOTO MEMORIES SCREEN -->
+<section class="screen" id="memories">
+    <div class="section-content">
+        <p class="eyebrow">LITTLE MOMENTS, BEAUTIFUL MEMORIES</p>
 
-        <h1>
-            Happy Birthday
-            <span>SAI SHRUTHI ❤️</span>
-        </h1>
+        <h2 class="script-title">A little gallery for you</h2>
 
-        <p class="intro">
-            Today is not just another day.
-            It's the day a beautiful person came into this world. ✨
+        <p class="section-copy">
+            Three photos, countless reasons to smile.
+            Here's to the beautiful memories and the ones yet to come. ♡
         </p>
 
-        <button onclick="startCelebration()">
-            🎉 Start Celebration
+        <div class="memories-grid">
+            <article class="memory-card">
+                <img
+                    src="images/Media (10).jpg"
+                    alt="Sai Shruthi — memory one"
+                    loading="lazy"
+                >
+                <p>A moment worth remembering ✨</p>
+            </article>
+
+            <article class="memory-card">
+                <img
+                    src="images/Media (9).jpg"
+                    alt="Sai Shruthi — memory two"
+                    loading="lazy"
+                >
+                <p>A little piece of happiness ♡</p>
+            </article>
+
+            <article class="memory-card">
+                <img
+                    src="images/Media (8).jpg"
+                    alt="Sai Shruthi — memory three"
+                    loading="lazy"
+                >
+                <p>More beautiful moments ahead 🌙</p>
+            </article>
+        </div>
+
+        <button class="glow-button next-button" data-next="cake">
+            Let's celebrate! 🎂
         </button>
-
-    </section>
-
-
-    <!-- Birthday Message -->
-    <section class="message-section">
-
-        <h2>💌 A Little Birthday Message</h2>
-
-        <div class="message-card">
-
-            <p>
-                Happy Birthday to someone truly special! ❤️
-            </p>
-
-            <p>
-                May your life always be filled with happiness,
-                laughter, love and beautiful memories.
-            </p>
-
-            <p>
-                May every dream you have slowly become a reality,
-                and may every new year of your life bring you
-                more reasons to smile. ✨
-            </p>
-
-            <p>
-                Keep smiling, keep shining and always stay
-                the wonderful person you are. 🌸
-            </p>
-
-            <h3>
-                Once again... Happy Birthday! 🎂❤️
-            </h3>
-
-        </div>
-
-    </section>
+    </div>
+</section>
 
 
-    <!-- Photo Gallery -->
-    <section class="gallery-section">
+        <!-- 3. INTERACTIVE BIRTHDAY CAKE -->
+        <section class="screen" id="cake">
+            <div class="section-content">
+                <p class="eyebrow">MAKE A WISH</p>
+                <h2 class="script-title">A little birthday magic</h2>
+                <p class="section-copy">
+                    Tap each candle to blow it out, then make a wish. 🎂
+                </p>
 
-        <h2>📸 Beautiful Memories</h2>
+                <div class="cake-scene">
+                    <div class="cake-top">
+                        <div class="candle" role="button" tabindex="0" aria-label="Blow out candle 1"><span class="flame"></span></div>
+                        <div class="candle" role="button" tabindex="0" aria-label="Blow out candle 2"><span class="flame"></span></div>
+                        <div class="candle" role="button" tabindex="0" aria-label="Blow out candle 3"><span class="flame"></span></div>
+                        <div class="candle" role="button" tabindex="0" aria-label="Blow out candle 4"><span class="flame"></span></div>
+                        <div class="candle" role="button" tabindex="0" aria-label="Blow out candle 5"><span class="flame"></span></div>
+                    </div>
+                    <div class="cake-body">
+                        <span>Happy Birthday</span>
+                        <strong>Sai Shruthi ♡</strong>
+                    </div>
+                    <div class="cake-plate"></div>
+                </div>
 
-        <div class="gallery">
+                <p id="candleMessage" class="wish-message" aria-live="polite">
+                    Five little lights, five little wishes. ✨
+                </p>
 
-            <div class="photo-card">
-                <img src="images/Media (8).jpg" alt="Beautiful memory">
+                <button class="glow-button" id="wishButton">
+                    Make a wish ✨
+                </button>
+
+                <button class="text-button next-button" data-next="music">
+                    Continue to your song →
+                </button>
             </div>
+        </section>
 
-            <div class="photo-card">
-                <img src="images/Media (9).jpg" alt="Beautiful memory">
+        <!-- 4. MUSIC PLAYER -->
+        <section class="screen" id="music">
+            <div class="section-content">
+                <p class="eyebrow">A LITTLE SOUNDTRACK FOR YOUR DAY</p>
+                <h2 class="script-title">A song just for you</h2>
+
+                <div class="music-card">
+                    <div class="record" id="record">
+                        <div class="record-center">♡</div>
+                    </div>
+                    <p class="song-title">A Little Something Special</p>
+                    <p class="song-subtitle">Your birthday soundtrack</p>
+
+                    <audio id="birthdayMusic" preload="metadata" loop>
+                        <source src="images\birthday-song.mp3.mp3" type="audio/mpeg">
+                    </audio>
+
+                    <button class="play-button" id="playButton" aria-label="Play music">
+                        ▶
+                    </button>
+                    <p class="music-note" id="musicNote" aria-live="polite">
+                        Add your favourite song to make this moment yours. ♡
+                    </p>
+                </div>
+
+                <button class="glow-button next-button" data-next="secret">
+                    One last little surprise... <span>♡</span>
+                </button>
             </div>
+        </section>
 
-            <div class="photo-card">
-                <img src="images/Media (10).jpg" alt="Beautiful memory">
+        <!-- 5. SECRET MESSAGE -->
+        <section class="screen" id="secret">
+            <div class="section-content secret-content">
+                <div class="moon small-moon">☾</div>
+                <p class="eyebrow">JUST BETWEEN YOU AND THIS LITTLE PAGE</p>
+                <h2 class="script-title">One last thing...</h2>
+
+                <p class="section-copy">
+                    There is one message I saved especially for you.
+                </p>
+
+                <button class="glow-button" id="revealButton">
+                    Reveal your surprise 💌
+                </button>
+
+                <article class="secret-card hidden" id="secretCard">
+                    <div class="secret-symbol">✦</div>
+                    <h3 class="script-title">For you, Sai Shruthi</h3>
+                    <p>
+                        I hope this new year of your life brings you
+                        peaceful days, unexpected happiness, beautiful
+                        adventures, and a thousand reasons to smile.
+                    </p>
+                    <p>
+                        Keep being your wonderful self. The world needs
+                        more of the light you bring into it.
+                    </p>
+                    <p class="final-wish">
+                        Happy Birthday, Sai Shruthi. ♡
+                    </p>
+                    <div class="tiny-heart">With warm wishes, always ♡</div>
+                </article>
+
+                <button class="text-button" id="replayButton">
+                    ↺ Experience the surprise again
+                </button>
             </div>
+        </section>
+    </main>
 
-        </div>
+    <footer>Made with care, just for you ♡</footer>
 
-    </section>
-
-
-    <!-- Final Wish -->
-    <section class="final-section">
-
-        <div class="gift">🎁</div>
-
-        <h2>My Wish For You ❤️</h2>
-
-        <p>
-            I hope this new chapter of your life brings you
-            endless happiness, amazing adventures and countless
-            beautiful memories.
-        </p>
-
-        <p>
-            May you always have a reason to smile.
-            May you always be surrounded by people who love you.
-        </p>
-
-        <h1>Happy Birthday! 🎂🎉</h1>
-
-        <div class="hearts">
-            ❤️ 💕 ❤️ 💕 ❤️
-        </div>
-
-    </section>
-
-</div>
-
-
-<!-- Confetti container -->
-<div id="confetti-container"></div>
-
-
-<!-- Footer -->
-<footer>
-    Made with ❤️ just for you
-</footer>
-
-
-<script src="script.js"></script>
-
+    <script src="script.js"></script>
 </body>
 </html>
-```
