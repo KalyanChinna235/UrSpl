@@ -2,7 +2,7 @@
 "use strict";
 
 // ==========================================
-// SAI SHRUTHI'S BIRTHDAY SURPRISE ❤️
+// KALYAN MICKYY'S BIRTHDAY SURPRISE ❤️
 // ==========================================
 
 const screens = document.querySelectorAll(".screen");
@@ -28,7 +28,7 @@ let typingTimer = null;
 let musicAvailable = true;
 let wishMade = false;
 
-const letterMessage = `Happy Birthday, Sai Shruthi! ❤️
+const letterMessage = `Happy Birthday, Kalyan Mickyy! ❤️
 
 Today is a reminder that the world became a little more beautiful the day you arrived in it.
 
